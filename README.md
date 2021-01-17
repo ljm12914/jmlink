@@ -4,3 +4,5 @@
 LJM12914早期作品Archive
 
 [LJM12914的个人网站](https://ljm.im)
+
+以前该模块部署于https://jml.ink
