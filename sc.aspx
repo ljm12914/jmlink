@@ -1,17 +1,17 @@
 <%@ Page language="javascript"%>
 <html>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JMl.ink - LJM12914µÄ¶ÌÁ´½Ó·şÎñÍøÕ¾</title>
+    <title>jmlink</title>
     <body style="text-align: center;">
-        <h1>ÄúµÄ¶ÌÁ´½ÓÉú³É³É¹¦¡£</h1>
-        <p>ÄúµÄ¶ÌÁ´½ÓÎª£º</p>
+        <h1>æ‚¨çš„çŸ­é“¾æ¥ç”ŸæˆæˆåŠŸã€‚</h1>
+        <p>æ‚¨çš„çŸ­é“¾æ¥ä¸ºï¼š</p>
         <textarea id="show" readonly="readonly" style="height: 27px;line-height: 27px;text-align: center;resize: none;"></textarea>
         <br /><br />
-        <input type="button" value="µã»÷¸´ÖÆ²¢»Øµ½Ö÷Ò³" onclick="copylink()" />
+        <input type="button" value="ç‚¹å‡»å¤åˆ¶å¹¶å›åˆ°ä¸»é¡µ" onclick="copylink()" />
         <script>function copylink(){var fz=document.getElementById("show");fz.select();document.execCommand("copy");location.href="index.html"}</script>
     </body>
     <%
-    //ÉùÃ÷±äÁ¿ÇøÓò
+    //å£°æ˜å˜é‡åŒºåŸŸ
     var fso,fas;
     fso = new ActiveXObject("Scripting.FileSystemObject");
     fas = new ActiveXObject("Adodb.Stream");
@@ -19,7 +19,7 @@
     var wz = Request.QueryString("wzin");
     var sea1,sea2,sea3,sea4;
     while(1 == 1){
-        //Ëæ»úÉú³É²¢ºÏ³É
+        //éšæœºç”Ÿæˆå¹¶åˆæˆ
         rd1 = sj();
         System.Threading.Thread.Sleep(250);
         rd2 = sj();
@@ -27,44 +27,30 @@
         rd3 = sj();
         System.Threading.Thread.Sleep(250);
         rdz = rd1 + rd2 + rd3;
-        //±£Ö¤Î¨Ò»
+        //ä¿è¯å”¯ä¸€
         if(!fso.FolderExists("E:\\Sites\\jmlink\\" + rdz)){
             fso.CreateFolder("E:\\Sites\\jmlink\\" + rdz);
             break;
         }
         else{
-            Response.Write("<script>alert(\"³öÏÖÎÊÌâ£¬ÇëÖØÊÔ\")</script>");
+            Response.Write("<script>alert(\"å‡ºç°é—®é¢˜ï¼Œè¯·é‡è¯•\")</script>");
             return;
         }
     }
-    //ÊäÈëÍøÖ·ÕæÎ±¼ø±ğ£¨·ÀÖ¹ÂÒ¸ã£©
+    //è¾“å…¥ç½‘å€çœŸä¼ªé‰´åˆ«ï¼ˆé˜²æ­¢ä¹±æï¼‰
     sea1 = wz.search(/http:\/\//i);
     sea2 = wz.search(/https:\/\//i);
     sea3 = wz.search(/\./);
     sea4 = wz.length;
-    //±£ÁôÎ»ÖÃ£¨ÓÃÓÚÌí¼ÓÉ¸Ñ¡ÏîÄ¿£©
-    var sea5 = wz.search(/xn--ncxz81f31b/i);
-    if(sea5 != -1){
-        Response.Write("<script>alert(\"º¬ÓĞÃô¸Ğ´Ê£¬²»ÓèÉú³É¶ÌÁ´½Ó£¡£¡\")</script>");
-        fso.DeleteFolder("E:\\Sites\\jmlink\\" + rdz);
-        Response.Write("<script>javascript:history.go(-1)</script>");
-        return;
-    }
-    sea5 = wz.search(/ÖÓ¾²äŞ/i);
-    if(sea5 != -1){
-        Response.Write("<script>alert(\"º¬ÓĞÃô¸Ğ´Ê£¬²»ÓèÉú³É¶ÌÁ´½Ó£¡£¡\")</script>");
-        fso.DeleteFolder("E:\\Sites\\jmlink\\" + rdz);
-        Response.Write("<script>javascript:history.go(-1)</script>");
-        return;
-    }
-    //½áÊø±£ÁôÎ»ÖÃ
+    //ä¿ç•™ä½ç½®ï¼ˆç”¨äºæ·»åŠ ç­›é€‰é¡¹ç›®ï¼‰
+    //ç»“æŸä¿ç•™ä½ç½®
     switch(sea1){
         case -1:{
             if(sea2 != -1){
                 break;
             }
             else{
-                Response.Write("<script>alert(\"ÊäÈëµÄÍøÖ·ĞèÒª°üº¬http://»òhttps://£¡\")</script>");
+                Response.Write("<script>alert(\"è¾“å…¥çš„ç½‘å€éœ€è¦åŒ…å«http://æˆ–https://ï¼\")</script>");
                 fso.DeleteFolder("E:\\Sites\\jmlink\\" + rdz);
                 Response.Write("<script>javascript:history.go(-1)</script>");
                 return;
@@ -74,7 +60,7 @@
             break;
         }
         default:
-            Response.Write("<script>alert(\"ÊäÈëÍøÖ·µÄ¸ñÊ½²»¶Ô¡£ÊÇ·ñÂ©ÁË»ò¶à¼ÓÁËÊ²Ã´£¿\")</script>");
+            Response.Write("<script>alert(\"è¾“å…¥ç½‘å€çš„æ ¼å¼ä¸å¯¹ã€‚æ˜¯å¦æ¼äº†æˆ–å¤šåŠ äº†ä»€ä¹ˆï¼Ÿ\")</script>");
             fso.DeleteFolder("E:\\Sites\\jmlink\\" + rdz);
             Response.Write("<script>javascript:history.go(-1)</script>");
             return;
@@ -87,30 +73,30 @@
             break;
         }
         default:
-            Response.Write("<script>alert(\"ÊäÈëÍøÖ·µÄ¸ñÊ½²»¶Ô¡£ÊÇ·ñÂ©ÁË»ò¶à¼ÓÁËÊ²Ã´£¿\")</script>");
+            Response.Write("<script>alert(\"è¾“å…¥ç½‘å€çš„æ ¼å¼ä¸å¯¹ã€‚æ˜¯å¦æ¼äº†æˆ–å¤šåŠ äº†ä»€ä¹ˆï¼Ÿ\")</script>");
             fso.DeleteFolder("E:\\Sites\\jmlink\\" + rdz);
             Response.Write("<script>javascript:history.go(-1)</script>");
             return;
     }
     if(sea3 == -1){
-        Response.Write("<script>alert(\"ÊäÈëÍøÖ·µÄ¸ñÊ½²»¶Ô¡£ÊÇ·ñÂ©ÁË»ò¶à¼ÓÁËÊ²Ã´£¿\")</script>");
+        Response.Write("<script>alert(\"è¾“å…¥ç½‘å€çš„æ ¼å¼ä¸å¯¹ã€‚æ˜¯å¦æ¼äº†æˆ–å¤šåŠ äº†ä»€ä¹ˆï¼Ÿ\")</script>");
         fso.DeleteFolder("E:\\Sites\\jmlink\\" + rdz);
         Response.Write("<script>javascript:history.go(-1)</script>");
         return;
     }
     if(sea4 < 20){
-        Response.Write("<script>alert(\"ÊäÈëµÄÍøÖ·ÒÑ¾­×ã¹»¶Ì£¬Ã»ÓĞ±ØÒªÊ¹ÓÃ¶ÌÁ´½Ó\")</script>");
+        Response.Write("<script>alert(\"è¾“å…¥çš„ç½‘å€å·²ç»è¶³å¤ŸçŸ­ï¼Œæ²¡æœ‰å¿…è¦ä½¿ç”¨çŸ­é“¾æ¥\")</script>");
         fso.DeleteFolder("E:\\Sites\\jmlink\\" + rdz);
         Response.Write("<script>location.href=\"https://jml.ink/\"</script>");
         return;
     }
-    //¸´ÖÆ²¢Ğ´Èë£¨¸´ÖÆÎÄ¼şĞèÒªÈ¨ÏŞ£¬Ö±½Ó´´ÎÄ¼şÈ»ºóĞ´ÎÄ¼ş»¹ºÃÒ»Ğ©£©
+    //å¤åˆ¶å¹¶å†™å…¥ï¼ˆå¤åˆ¶æ–‡ä»¶éœ€è¦æƒé™ï¼Œç›´æ¥åˆ›æ–‡ä»¶ç„¶åå†™æ–‡ä»¶è¿˜å¥½ä¸€äº›ï¼‰
     fas.Charset = "utf-8";
     fas.Open();
-    fas.WriteText("<title>ÕıÔÚÖØ¶¨Ïò... - JMl.ink</title><p style=\"text-align:center;\">ÕıÔÚÎªÄúÖØ¶¨ÏòÖÁ¶ÌÁ´½ÓÖ¸ÏòµÄÍøÖ·......<br /><a href=\"" + wz + "\">ÈçÃ»ÓĞ³É¹¦ÖØ¶¨Ïò£¬Çëµã»÷´Ë´¦ÖØÊÔ</a><hr /></p><small>Copyright 2019-2021 JMl.ink ÖÆ×÷ÕßLJM12914 ±£ÁôËùÓĞÈ¨Àû. All Rights Reserved.</small><script>location.href=\"" + wz + "\";</script>");
+    fas.WriteText("<title>æ­£åœ¨é‡å®šå‘... - JMl.ink</title><p style=\"text-align:center;\">æ­£åœ¨ä¸ºæ‚¨é‡å®šå‘è‡³çŸ­é“¾æ¥æŒ‡å‘çš„ç½‘å€......<br /><a href=\"" + wz + "\">å¦‚æ²¡æœ‰æˆåŠŸé‡å®šå‘ï¼Œè¯·ç‚¹å‡»æ­¤å¤„é‡è¯•</a><hr /></p><small>Copyright 2019-2021 JMl.ink åˆ¶ä½œè€…LJM12914 ä¿ç•™æ‰€æœ‰æƒåˆ©. All Rights Reserved.</small><script>location.href=\"" + wz + "\";</script>");
     fas.SaveToFile("E:\\Sites\\jmlink\\" + rdz + "\\l.html",2);
     fas.Close();
-    //³ö½á¹û¸øÓÃ»§
+    //å‡ºç»“æœç»™ç”¨æˆ·
     Response.Write("<script>document.getElementById(\"show\").innerHTML = \"https://jml.ink/" + rdz + "\"</script>");
     function sj() {
         var input = Math.floor(Math.random() * 61) + 1;
