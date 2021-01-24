@@ -1,18 +1,30 @@
 ﻿<!DOCTYPE html>
 <html>
-
 <head>
-
+	<link rel="stylesheet" type="text/css" href="main.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>jmlink</title>
 </head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>jmlink</title>
-
 <body style="text-align: center;">
     <form method="GET" action="sc.aspx">
-        <h3 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">输入您想要缩短的网址：</h3>
-        <textarea name="wzin" autofocus cols="50" rows="8" placeholder="输入网址，以http://或https://开头"></textarea><br /><br />
+        <h2>输入您想要缩短的网址：</h2>
+		<div id="in"><textarea name="input" autofocus cols="60" rows="15" placeholder="以http://或https://开头"></textarea></div>
+		<input type="checkbox" onClick="gj()" />开启高级选项<br />
+		<div><input name="method" value="default" type="radio" checked=true />默认</div>
+		<div><input name="method" value="get" type="radio" />强制使用GET</div>
+		<div><input name="method" value="post" type="radio" />强制使用POST</div>
         <input type="submit" value="&nbsp;&nbsp;&nbsp;提&nbsp;交&nbsp;&nbsp;&nbsp;" />
     </form>
-</body>
 
+	<script>
+		function gj(){
+			if(!isopened_gj){
+				
+			}
+			else{
+				
+			}
+		}
+	</script>
+</body>
 </html>
