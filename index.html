@@ -2,20 +2,31 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="main.css">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>jmlink</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>jmlink</title>
 </head>
 <body>
-    <form method="POST" action="index.php">
-        <h1>输入您想要缩短的网址</h1>
-		<div><textarea id="input" name="input" autofocus cols="60" rows="15" placeholder="以http://或https://开头"></textarea></div>
-		<ul>
-			<label>访问方法：</label>
-			<li><input name="method" value="default" type="radio" checked=true /><label>默认</label></li>
-		    <li><input name="method" value="get" type="radio" /><label>强制使用GET</label></li>
-		    <li><input name="method" value="post" type="radio" /><label>强制使用POST</label></li>
-		</ul>
-        <input id="submit" type="submit" value="&nbsp;&nbsp;&nbsp;提&nbsp;交&nbsp;&nbsp;&nbsp;" />
-    </form>
+	<script>
+		function go(){
+			var method;
+			var radio = document.getElementsByName("method");
+			for(var i = 0; i < radio.length; i++){
+				if(radio[i].checked){
+					method=radio[i].value;
+					break;
+				}
+			}
+			location.href = "index.php?url=" + document.getElementById("input").value + "&method=" + method;
+		}
+	</script>
+	<h1><label>输入您想要缩短的网址</label></h1>
+	<textarea id="input" autofocus cols="60" rows="15" placeholder="以http://或https://开头"></textarea>
+	<ul>
+		<label>访问方法：</label>
+		<li><input name="method" value="default" type="radio" checked="true" /><label>默认</label></li>
+		<li><input name="method" value="get" type="radio" /><label>强制使用GET</label></li>
+		<li><input name="method" value="post" type="radio" /><label>强制使用POST</label></li>
+	</ul>
+	<button id="go" onclick="go()">&nbsp;&nbsp;&nbsp;提&nbsp;交&nbsp;&nbsp;&nbsp;</button>
 </body>
 </html>

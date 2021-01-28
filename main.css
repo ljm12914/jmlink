@@ -9,7 +9,7 @@ body{
 	text-align: center;
 	background-color: #E9EBEC;
 }
-#input{
+textarea{
 	resize: vertical;
 	outline: none;
 	font-size: x-large;
@@ -18,21 +18,31 @@ body{
 	border-color: #D3D6D8;
 	border-width: 2px;
 }
-#input: focus{
+textarea:hover{
+	border-color: #A1A3A4;
+}
+textarea:focus{
 	border-color: #4E71F2;
+}
+#result{
+	resize: none;
+	text-align: center;
 }
 ul li{
 	display: inline-block;
 }
-#submit{
+#go{
 	background-color: white;
 	outline: none;
-	border-style: solid;
-	-webkit-transition-duration: 0.5s;
-	transition-duration: 0.5s;
+	cursor: pointer;
+	font-size: larger;
+	padding: 1% 2% 1% 2%;
+	border: 2px solid #00A8E0;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
 	color: black;
 }
-#submit: hover{
-	background-color: #008CBA;
+#go:hover{
+	background-color: #00A8E0;
 	color: white;
 }
