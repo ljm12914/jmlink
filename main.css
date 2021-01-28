@@ -6,14 +6,33 @@ div{
 	margin-right: 35%;
 }
 body{
+	text-align: center;
 	background-color: #E9EBEC;
 }
-textarea{
+#input{
 	resize: vertical;
 	outline: none;
-	font-size: larger;
+	font-size: x-large;
 	border-style: solid;
 	border-radius: 6px;
 	border-color: #D3D6D8;
 	border-width: 2px;
+}
+#input: focus{
+	border-color: #4E71F2;
+}
+ul li{
+	display: inline-block;
+}
+#submit{
+	background-color: white;
+	outline: none;
+	border-style: solid;
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	color: black;
+}
+#submit: hover{
+	background-color: #008CBA;
+	color: white;
 }

@@ -5,26 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>jmlink</title>
 </head>
-<body style="text-align: center;">
-    <form method="GET" action="sc.aspx">
-        <h2>输入您想要缩短的网址：</h2>
-		<div id="in"><textarea name="input" autofocus cols="60" rows="15" placeholder="以http://或https://开头"></textarea></div>
-		<input type="checkbox" onClick="gj()" />开启高级选项<br />
-		<div><input name="method" value="default" type="radio" checked=true />默认</div>
-		<div><input name="method" value="get" type="radio" />强制使用GET</div>
-		<div><input name="method" value="post" type="radio" />强制使用POST</div>
-        <input type="submit" value="&nbsp;&nbsp;&nbsp;提&nbsp;交&nbsp;&nbsp;&nbsp;" />
+<body>
+    <form method="POST" action="index.php">
+        <h1>输入您想要缩短的网址</h1>
+		<div><textarea id="input" name="input" autofocus cols="60" rows="15" placeholder="以http://或https://开头"></textarea></div>
+		<ul>
+			<label>访问方法：</label>
+			<li><input name="method" value="default" type="radio" checked=true /><label>默认</label></li>
+		    <li><input name="method" value="get" type="radio" /><label>强制使用GET</label></li>
+		    <li><input name="method" value="post" type="radio" /><label>强制使用POST</label></li>
+		</ul>
+        <input id="submit" type="submit" value="&nbsp;&nbsp;&nbsp;提&nbsp;交&nbsp;&nbsp;&nbsp;" />
     </form>
-
-	<script>
-		function gj(){
-			if(!isopened_gj){
-				
-			}
-			else{
-				
-			}
-		}
-	</script>
 </body>
 </html>
