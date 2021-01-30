@@ -19,7 +19,7 @@
 		}
 	</script>
 	<?php
-	$your_domain = "localhost";
+	$your_domain = "localhost";//<<<<<------------------------------------------------CHANGE IT TO YOUR DOMAIN!!!!!
 	$url = $_GET['url'];
 	$method = $_GET['method'];
 	$pattern = "/^https?:\/\/.*\...+$/";
