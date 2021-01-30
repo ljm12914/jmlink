@@ -11,7 +11,6 @@
         <script>function copylink(){var fz=document.getElementById("show");fz.select();document.execCommand("copy");location.href="index.html"}</script>
     </body>
     <%
-    //声明变量区域
     var fso,fas;
     fso = new ActiveXObject("Scripting.FileSystemObject");
     fas = new ActiveXObject("Adodb.Stream");
@@ -19,7 +18,6 @@
     var wz = Request.QueryString("wzin");
     var sea1,sea2,sea3,sea4;
     while(1 == 1){
-        //随机生成并合成
         rd1 = sj();
         System.Threading.Thread.Sleep(250);
         rd2 = sj();
@@ -27,7 +25,6 @@
         rd3 = sj();
         System.Threading.Thread.Sleep(250);
         rdz = rd1 + rd2 + rd3;
-        //保证唯一
         if(!fso.FolderExists("E:\\Sites\\jmlink\\" + rdz)){
             fso.CreateFolder("E:\\Sites\\jmlink\\" + rdz);
             break;
@@ -37,13 +34,10 @@
             return;
         }
     }
-    //输入网址真伪鉴别（防止乱搞）
     sea1 = wz.search(/http:\/\//i);
     sea2 = wz.search(/https:\/\//i);
     sea3 = wz.search(/\./);
     sea4 = wz.length;
-    //保留位置（用于添加筛选项目）
-    //结束保留位置
     switch(sea1){
         case -1:{
             if(sea2 != -1){
@@ -90,13 +84,11 @@
         Response.Write("<script>location.href=\"https://jml.ink/\"</script>");
         return;
     }
-    //复制并写入（复制文件需要权限，直接创文件然后写文件还好一些）
     fas.Charset = "utf-8";
     fas.Open();
     fas.WriteText("<title>正在重定向... - JMl.ink</title><p style=\"text-align:center;\">正在为您重定向至短链接指向的网址......<br /><a href=\"" + wz + "\">如没有成功重定向，请点击此处重试</a><hr /></p><small>Copyright 2019-2021 JMl.ink 制作者LJM12914 保留所有权利. All Rights Reserved.</small><script>location.href=\"" + wz + "\";</script>");
     fas.SaveToFile("E:\\Sites\\jmlink\\" + rdz + "\\l.html",2);
     fas.Close();
-    //出结果给用户
     Response.Write("<script>document.getElementById(\"show\").innerHTML = \"https://jml.ink/" + rdz + "\"</script>");
     function sj() {
         var input = Math.floor(Math.random() * 61) + 1;
