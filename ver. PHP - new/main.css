@@ -1,0 +1,53 @@
+@font-face{
+	 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+div{
+	margin-left: 35%;
+	margin-right: 35%;
+}
+body{
+	text-align: center;
+	background-color: #E9EBEC;
+}
+textarea{
+	resize: vertical;
+	outline: none;
+	font-size: x-large;
+	border-style: solid;
+	border-radius: 6px;
+	border-color: #D3D6D8;
+	border-width: 2px;
+}
+textarea:hover{
+	border-color: #A1A3A4;
+}
+textarea:focus{
+	border-color: #4E71F2;
+}
+#result{
+	resize: none;
+	text-align: center;
+}
+ul li{
+	display: inline-block;
+}
+#go{
+	padding: 1% 2% 1% 2%;
+	font-size: larger;
+}
+#copy{
+	padding: 0.5% 1% 0.5% 1%;
+}
+button:hover{
+	background-color: #00A8E0;
+	color: white;
+}
+button{
+	cursor: pointer;
+	background-color: white;
+	outline: none;
+	border: 2px solid #00A8E0;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	color: black;
+}
