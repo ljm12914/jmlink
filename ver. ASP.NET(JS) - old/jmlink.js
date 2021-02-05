@@ -1,4 +1,4 @@
-﻿function main() {
+﻿/*function main() {
     var fso,fas;
     fso = new ActiveXObject("Scripting.FileSystemObject");
     fas = new ActiveXObject("Adodb.Stream");
@@ -204,3 +204,4 @@ function sj() {
             return "Z";
     }
 }
+*/
